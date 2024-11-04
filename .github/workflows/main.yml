@@ -12,7 +12,7 @@ on:
 
 #啟動之後需要執行的工作
 job:
-  build-and-push:
+  build:
     runs-on: ubuntu-latest (windows-latest) | Ubuntu-'20.2'
     steps:
     -
@@ -30,6 +30,7 @@ job:
       register: ghcr.io
       username: ${{github.repository_owner}}
       password: ${{secret.GHRC_TOKEN}}
+
 
     name: Build and push
     uses: docker/build-push-action@v2
